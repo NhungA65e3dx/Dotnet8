@@ -2,11 +2,12 @@
 
 namespace Dotnet8.Model
 {
-    public class AddUpdateOurHero
+    public class AddUpdateCustomer
     {
         public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
+        
         public string UserName { get; set; } = string.Empty;
+        public string Phone { get; set; } = string.Empty;
         [Required]
         [EmailAddress]
         [DataType(DataType.EmailAddress)]
@@ -18,7 +19,7 @@ namespace Dotnet8.Model
         [DataType(DataType.Password)]
         [Compare(nameof(Password))]
         public string ConfirmPassword { get; set; } = string.Empty;
-        public string Role { get; set; }      
+        public string Role { get; set; }
         public bool isActive { get; set; } = true;
     }
 }

@@ -55,6 +55,7 @@ namespace Dotnet8.Service
                     obj.Email = userObj.Email;
                     obj.Username = userObj.Username;
                     obj.Password = userObj.Password;
+                    obj.Role = userObj.Role;
                     db.Users.Update(obj);
                     isSuccess = await db.SaveChangesAsync() > 0;
                 }

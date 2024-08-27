@@ -28,8 +28,11 @@ namespace Dotnet8.Service
         {
             var addHero = new OurHero()
             {
-                FirstName = obj.FirstName,
-                LastName = obj.LastName,
+                Name = obj.Name,
+                UserName = obj.UserName,
+                Email=obj.Email,
+                Password = obj.Password,
+                Role = obj.Role,
                 isActive = obj.isActive,
             };
 
@@ -43,8 +46,11 @@ namespace Dotnet8.Service
             var hero = await _db.OurHeros.FirstOrDefaultAsync(index => index.Id == id);
             if (hero != null)
             {
-                hero.FirstName = obj.FirstName;
-                hero.LastName = obj.LastName;
+                hero.Name = obj.Name;
+                hero.UserName = obj.UserName;
+                hero.Email = obj.Email;
+                hero.Password = obj.Password;
+                hero.Role = obj.Role;
                 hero.isActive = obj.isActive;
 
                 var result = await _db.SaveChangesAsync();

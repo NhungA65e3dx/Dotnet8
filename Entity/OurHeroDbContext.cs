@@ -10,6 +10,7 @@ namespace Dotnet8.Entity
         }
         public DbSet<OurHero> OurHeros { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<OurHero>().HasKey(x => x.Id);
@@ -18,8 +19,11 @@ namespace Dotnet8.Entity
                 new OurHero
                 {
                     Id = 1,
-                    FirstName = "System",
-                    LastName = "",
+                    Name = "User",
+                    UserName = "User",
+                    Email = "User@123",
+                    Password = "Password@123",
+                    Role = "User",
                     isActive = true,
                 }
             );
@@ -31,8 +35,21 @@ namespace Dotnet8.Entity
                     FirstName = "Admin",
                     LastName = "",
                     Username = "Admin",
-                    Email = "Admin",
+                    Email = "Admin@123",
                     Password = "Admin",
+                    Role = "Admin",
+                }
+            );
+            modelBuilder.Entity<Customer>().HasData(
+                new Customer
+                {
+                    Id = 1,                   
+                    UserName = "Customer",
+                    Phone = "0125458752",
+                    Email = "Customer@123",
+                    Password = "Customer@123",
+                    Role = "Customer",
+                    isActive = true,
                 }
             );
         }

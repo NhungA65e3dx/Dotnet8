@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Dotnet8.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/User")]
     [ApiController]
     public class OurHeroController : ControllerBase
     {
@@ -69,7 +69,7 @@ namespace Dotnet8.Controllers
         }
 
         [HttpDelete]
-        [Route("{id}")]
+        [Route("{id} Xóa")]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
             if (!await _heroService.DeleteHerosByID(id))
